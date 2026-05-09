@@ -10,7 +10,7 @@ Requiere Neovim **0.8+** (usa `nvim_set_hl`). Activa `termguicolors` al cargar e
 
 ```lua
 {
-  "jdtwor/jdtwor-theme",
+  "JDTWOR/jdtwor-theme",
   priority = 1000,
   lazy = false,
   config = function()
