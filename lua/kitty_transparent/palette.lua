@@ -25,10 +25,21 @@ M.colors = {
   type_builtin = "#ffb300",
   type_def = "#ff8c42",
   string_lit = "#00ffb3",
-  func = "#38e7ff",
-  method = "#5ce1ff",
+
+  -- Funciones / métodos: definición vs llamada (máximo contraste con el fg)
+  func_def = "#00f0ff",
+  func_call = "#d4ff4a",
+  method_def = "#5dff9a",
+  method_call = "#ff9f1a",
+  constructor = "#ff4081",
+
+  -- Compat (UI que aún usa c.func / c.method)
+  func = "#00f0ff",
+  method = "#5dff9a",
+
   annotation = "#ff0ab8",
-  parameter = "#6efff5",
+  parameter = "#00ffc6",
+  variable = "#d8c8ff",
   comment = "#5cdbff",
   operator = "#ffdd2e",
   property = "#df73ff",

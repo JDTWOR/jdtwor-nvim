@@ -39,14 +39,30 @@ function M.setup(c)
   hl("String", { fg = c.string_lit, bold = false })
   hl("@string", { fg = c.string_lit })
 
-  hl("Function", { fg = c.func, bold = true })
-  hl("@function", { fg = c.func, bold = true })
-  hl("@function.method", { fg = c.method, bold = true })
+  -- Funciones: definición (greet, main) vs llamada (Fprintf, Now, ListenAndServe)
+  hl("Function", { fg = c.func_def, bold = true })
+  hl("@function", { fg = c.func_def, bold = true })
+  hl("@function.call", { fg = c.func_call, bold = true })
+  hl("@function.builtin", { fg = c.method_call, bold = true, italic = true })
+
+  hl("@function.method", { fg = c.method_def, bold = true })
+  hl("@function.method.call", { fg = c.method_call, bold = true })
+
+  hl("@constructor", { fg = c.constructor, bold = true })
+  hl("@constructor.call", { fg = c.constructor, bold = true })
 
   hl("@annotation", { fg = c.annotation, bold = true })
 
-  hl("@variable", { fg = c.fg })
+  hl("Identifier", { fg = c.variable })
+  hl("@variable", { fg = c.variable })
+  hl("@variable.builtin", { fg = c.type_builtin, bold = true, italic = true })
   hl("@variable.parameter", { fg = c.parameter, bold = true })
+
+  -- LSP semántico (Java/Go/etc. cuando TS no pinta todo)
+  hl("@lsp.type.function", { link = "@function" })
+  hl("@lsp.type.method", { link = "@function.method" })
+  hl("@lsp.type.class", { link = "@type" })
+  hl("@lsp.type.namespace", { link = "@module" })
 
   hl("Comment", { fg = c.comment, italic = true })
   hl("@comment", { fg = c.comment, italic = true })
